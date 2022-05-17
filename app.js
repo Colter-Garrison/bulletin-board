@@ -1,10 +1,9 @@
-const loginButton = document.getElementById('login-button');
-const signupButton = document.getElementById('signup-button');
+import { fetchPosts } from './fetch-utils.js';
 
-signupButton.addEventListener('click', () => {
-    location.replace('./sign-up-page');
-});
+const loginButton = document.getElementById('login-button');
 
 loginButton.addEventListener('click', () => {
-    location.replace('./log-in-page');
+    location.replace('');
 });
+
+console.log(fetchPosts());

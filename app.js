@@ -6,5 +6,5 @@ signupButton.addEventListener('click', () => {
 });
 
 loginButton.addEventListener('click', () => {
-    location.replace('./sign-in-page');
+    location.replace('./log-in-page');
 });

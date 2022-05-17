@@ -1,8 +1,10 @@
-// import functions and grab DOM elements
+const loginButton = document.getElementById('login-button');
+const signupButton = document.getElementById('signup-button');
 
-// let state
+signupButton.addEventListener('click', () => {
+    location.replace('./sign-up-page');
+});
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
+loginButton.addEventListener('click', () => {
+    location.replace('./sign-in-page');
+});

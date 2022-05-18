@@ -7,6 +7,10 @@ export async function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
+export function checkAuth() {
+    const user = getUser();
+    if (!user) location.replace('./auth-page');
+}
 
 export async function signUpUser(email, password) {
     const response = await client.auth.signUp({ email, password });
@@ -31,6 +35,12 @@ export async function redirectIfLoggedIn() {
     if (getUser()) {
         location.replace('./create-page');
     }
+}
+
+export async function logOut() {
+    await client.auth.signOut();
+
+    return (window.location.href = '/');
 }
 
 export async function fetchPosts() {

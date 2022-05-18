@@ -11,5 +11,6 @@ form.addEventListener('submit', async (e) => {
         contact: data.get('contact'),
     };
     const resp = await createNewPost(newPost);
-    console.log(resp);
+    return resp;
+    // console.log(resp);
 });

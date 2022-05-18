@@ -4,12 +4,11 @@ const signUpForm = document.getElementById('sign-up');
 const signInForm = document.getElementById('sign-in');
 const returnHome = document.getElementById('return-home');
 
-// redirectIfLoggedIn();
+redirectIfLoggedIn();
 
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(signUpForm);
-    // console.log({ email: data.get('email'), password: data.get('password') });
     const user = await signUpUser(data.get('email'), data.get('password'));
     if (user) {
         location.replace('../create-page');

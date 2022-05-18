@@ -12,7 +12,6 @@ form.addEventListener('submit', async (e) => {
     };
     const resp = await createNewPost(newPost);
     return resp;
-    // console.log(resp);
 });
 
 checkAuth();

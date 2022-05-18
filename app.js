@@ -1,9 +1,8 @@
-import { fetchPosts, checkAuth, logOut, getUser } from './fetch-utils.js';
+import { fetchPosts, logOut, getUser } from './fetch-utils.js';
 import { renderPostEl } from './render.js';
 
 const authButton = document.getElementById('auth-button');
 const createList = document.getElementById('create-list');
-
 
 async function handleLogOut() {
     await logOut();
@@ -11,8 +10,6 @@ async function handleLogOut() {
 async function handleAuth() {
     location.replace('/auth-page');
 }
-
-
 
 async function loadData() {
     const postEl = await fetchPosts();
@@ -22,7 +19,6 @@ async function loadData() {
         createList.append(postDiv);
     }
     const user = getUser();
-    console.log(user);
     if (user) {
         authButton.textContent = 'Logout';
         authButton.addEventListener('click', handleLogOut);
@@ -34,9 +30,4 @@ async function loadData() {
     }
 }
 
-// authButton.addEventListener('click', () => {
-    //     location.replace('./auth-page');
-    // });
-    
 loadData();
-    

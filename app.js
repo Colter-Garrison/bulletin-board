@@ -4,7 +4,6 @@ import { renderPostEl } from './render.js';
 const authButton = document.getElementById('auth-button');
 const createList = document.getElementById('create-list');
 
-checkAuth();
 
 async function handleLogOut() {
     await logOut();
@@ -22,15 +21,15 @@ async function loadData() {
         const postDiv = renderPostEl(post);
         createList.append(postDiv);
     }
-    const user = await getUser();
+    const user = getUser();
     console.log(user);
     if (user) {
         authButton.textContent = 'Logout';
-        authButton.addEventListener('click', handleLogOut());
+        authButton.addEventListener('click', handleLogOut);
         authButton.classList.remove('hide');
     } else {
         authButton.textContent = 'Sign In/Sign Up';
-        authButton.addEventListener('click', handleAuth());
+        authButton.addEventListener('click', handleAuth);
         authButton.classList.remove('hide');
     }
 }

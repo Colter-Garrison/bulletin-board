@@ -3,8 +3,47 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+export async function getUser() {
+    return client.auth.session() && client.auth.session().user;
+}
+
+
+export async function signUpUser(email, password) {
+    const response = await client.auth.signUp({ email, password });
+    if (response.user) {
+        return response.user;
+    } else {
+        console.error(response.error);
+    }
+}
+
+export async function signInUser(email, password) {
+    const signInResponse = await client.auth.signIn({ email, password });
+    if (signInResponse.user) {
+        location.replace('./create-page');
+    } else {
+        console.error(signInResponse.error);
+        alert('Invalid login credentials');
+    }
+}
+
+export async function redirectIfLoggedIn() {
+    if (getUser()) {
+        location.replace('./create-page');
+    }
+}
+
 export async function fetchPosts() {
     const response = await client.from('posts').select('*');
     
     return response.data;
+}
+
+export async function createNewPost(post) {
+    const response = await client.from('posts').insert(post);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
 }

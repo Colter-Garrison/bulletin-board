@@ -12,9 +12,14 @@ header {
     position: relative;
 }
 
-button {
+#auth-button {
     position: absolute;
     right: 0;
+}
+
+#new-potion {
+    position: absolute;
+    right: 130px;
 }
 
 #create-list {
@@ -32,4 +37,8 @@ button {
     height: 20vw;
     padding: 10px;
     /* border: 1px solid red; */
+}
+
+.hidden {
+    display: none;
 }

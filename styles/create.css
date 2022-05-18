@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+body {
+    background: url('../assets/paper.jpg');
+    font-family: 'Macondo', cursive;
+    text-shadow: 3px 3px 3px #878787;
+}

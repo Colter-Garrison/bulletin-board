@@ -20,7 +20,7 @@ export async function signUpUser(email, password) {
 export async function signInUser(email, password) {
     const signInResponse = await client.auth.signIn({ email, password });
     if (signInResponse.user) {
-        location.replace('./create-page');
+        location.replace('../create-page');
     } else {
         console.error(signInResponse.error);
         alert('Invalid login credentials');
@@ -42,6 +42,7 @@ export async function fetchPosts() {
 export async function createNewPost(post) {
     const response = await client.from('posts').insert(post);
     if (response.data) {
+        location.replace('/');
         return response.data;
     } else {
         console.error(response.error);

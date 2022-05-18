@@ -1,4 +1,4 @@
-import { createNewPost } from '../fetch-utils';
+import { createNewPost } from '../fetch-utils.js';
 
 const form = document.getElementById('new-post');
 

@@ -3,7 +3,7 @@ import { signUpUser, signInUser, redirectIfLoggedIn } from '../fetch-utils.js';
 const signUpForm = document.getElementById('sign-up');
 const signInForm = document.getElementById('sign-in');
 
-redirectIfLoggedIn();
+// redirectIfLoggedIn();
 
 signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();

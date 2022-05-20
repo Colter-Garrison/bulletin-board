@@ -1,1 +1,44 @@
-/* add home page styles here */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+body {
+    background: url('../assets/leather.jpg');
+    font-family: 'Macondo', cursive;
+    text-shadow: 3px 3px 3px #878787;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+#auth-button {
+    position: absolute;
+    right: 0;
+}
+
+#new-potion {
+    position: absolute;
+    right: 130px;
+}
+
+#create-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.post-element {
+    background: url('../assets/paper.jpg');
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    margin: 10px;
+    width: 20vw;
+    height: 20vw;
+    padding: 10px;
+    /* border: 1px solid red; */
+}
+
+.hidden {
+    display: none;
+}
